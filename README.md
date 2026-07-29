@@ -1,10 +1,8 @@
 # 🏦 Sistema de Gestión de Préstamos CHN
 
-# Sistema de Gestión de Préstamos
-
 ### Crédito Hipotecario Nacional de Guatemala (CHN)
 
-**Examen Práctico -- Analista Programador**
+**Examen Práctico -- Analista Programador** -- Luis Cabrera**
 
 ------------------------------------------------------------------------
 
