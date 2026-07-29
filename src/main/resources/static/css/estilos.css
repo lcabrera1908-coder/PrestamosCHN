@@ -1,0 +1,1385 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.contenedor{
+    width:95%;
+    max-width:1200px;
+    margin:30px auto;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#0d6efd;
+}
+
+h2{
+    margin:25px 0 15px;
+    color:#444;
+}
+
+.busqueda{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.busqueda input{
+    width:180px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.busqueda button{
+    padding:10px 20px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.busqueda button:hover{
+    background:#0b5ed7;
+}
+
+.datos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.datos-grid div{
+    background:#f8f9fa;
+    padding:12px;
+    border-radius:5px;
+}
+
+.etiqueta{
+    display:block;
+    font-weight:bold;
+    color:#666;
+    margin-bottom:5px;
+}
+
+.tabla-contenedor{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+.oculto{
+    display:none;
+}
+
+#mensaje{
+    margin-top:15px;
+    color:red;
+    font-weight:bold;
+}
+
+/* =========================================================
+   Esto es para el clientes.html para solo afectar a ese archivo
+   ========================================================= */
+
+.pagina-clientes .encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe3e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pagina-clientes .encabezado h1 {
+    margin-bottom: 18px;
+}
+
+.pagina-clientes .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-clientes .menu a {
+    display: inline-block;
+    padding: 10px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagina-clientes .menu a:hover {
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.pagina-clientes .menu a.activo {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.pagina-clientes .contenedor {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.pagina-clientes .tarjeta {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagina-clientes .tarjeta h2 {
+    margin-top: 0;
+    color: #334155;
+}
+
+.pagina-clientes .formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.pagina-clientes .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-clientes .campo-ancho {
+    grid-column: span 2;
+}
+
+.pagina-clientes .campo label {
+    margin-bottom: 7px;
+    color: #374151;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pagina-clientes .campo input,
+.pagina-clientes .campo select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pagina-clientes .campo input:focus,
+.pagina-clientes .campo select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.pagina-clientes .acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.pagina-clientes .acciones button,
+.pagina-clientes .btn-editar,
+.pagina-clientes .btn-eliminar {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.pagina-clientes .acciones button:hover,
+.pagina-clientes .btn-editar:hover,
+.pagina-clientes .btn-eliminar:hover {
+    opacity: 0.88;
+}
+
+.pagina-clientes .acciones button:active,
+.pagina-clientes .btn-editar:active,
+.pagina-clientes .btn-eliminar:active {
+    transform: scale(0.98);
+}
+
+.pagina-clientes #btnGuardar {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.pagina-clientes #btnNuevo {
+    background: #198754;
+    color: #ffffff;
+}
+
+.pagina-clientes #btnCancelar {
+    background: #6c757d;
+    color: #ffffff;
+}
+
+.pagina-clientes .titulo-tabla {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.pagina-clientes .titulo-tabla h2 {
+    margin-bottom: 0;
+}
+
+.pagina-clientes .titulo-tabla .busqueda {
+    margin-bottom: 0;
+}
+
+.pagina-clientes .btn-editar {
+    background: #ffc107;
+    color: #212529;
+    padding: 7px 12px;
+    margin: 2px;
+}
+
+.pagina-clientes .btn-eliminar {
+    background: #dc3545;
+    color: #ffffff;
+    padding: 7px 12px;
+    margin: 2px;
+}
+
+.pagina-clientes .mensaje {
+    display: none;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.pagina-clientes .mensaje.exito {
+    display: block;
+    color: #0f5132;
+    background: #d1e7dd;
+    border: 1px solid #badbcc;
+}
+
+.pagina-clientes .mensaje.error {
+    display: block;
+    color: #842029;
+    background: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
+
+.pagina-clientes table {
+    min-width: 950px;
+}
+
+.pagina-clientes th {
+    white-space: nowrap;
+}
+
+.pagina-clientes td {
+    vertical-align: middle;
+}
+
+.pagina-clientes button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+
+    .pagina-clientes .formulario-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    .pagina-clientes .campo-ancho {
+        grid-column: span 2;
+    }
+}
+
+/* Teléfonos */
+
+@media (max-width: 600px) {
+
+    .pagina-clientes .encabezado {
+        padding: 18px 15px;
+    }
+
+    .pagina-clientes .encabezado h1 {
+        font-size: 25px;
+    }
+
+    .pagina-clientes .menu {
+        flex-direction: column;
+    }
+
+    .pagina-clientes .menu a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pagina-clientes .contenedor {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    .pagina-clientes .tarjeta {
+        padding: 18px;
+    }
+
+    .pagina-clientes .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-clientes .campo-ancho {
+        grid-column: span 1;
+    }
+
+    .pagina-clientes .acciones {
+        flex-direction: column;
+    }
+
+    .pagina-clientes .acciones button {
+        width: 100%;
+    }
+
+    .pagina-clientes .titulo-tabla {
+        align-items: stretch;
+    }
+
+    .pagina-clientes .busqueda {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .pagina-clientes .busqueda input,
+    .pagina-clientes .busqueda button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   PÁGINA DE SOLICITUDES
+   ========================================================= */
+
+.pagina-solicitudes .encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe3e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pagina-solicitudes .encabezado h1 {
+    margin-bottom: 18px;
+}
+
+.pagina-solicitudes .menu {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-solicitudes .menu a {
+    padding: 10px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.pagina-solicitudes .menu a:hover {
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.pagina-solicitudes .menu a.activo {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.pagina-solicitudes .contenedor {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.pagina-solicitudes .tarjeta {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagina-solicitudes .tarjeta h2 {
+    margin-top: 0;
+}
+
+.pagina-solicitudes .formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.pagina-solicitudes .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-solicitudes .campo-ancho {
+    grid-column: span 2;
+}
+
+.pagina-solicitudes .campo label {
+    margin-bottom: 7px;
+    color: #374151;
+    font-weight: bold;
+}
+
+.pagina-solicitudes .campo input,
+.pagina-solicitudes .campo select,
+.pagina-solicitudes .campo textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.pagina-solicitudes .campo textarea {
+    resize: vertical;
+}
+
+.pagina-solicitudes .campo input:focus,
+.pagina-solicitudes .campo select:focus,
+.pagina-solicitudes .campo textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.pagina-solicitudes .acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.pagina-solicitudes .acciones button {
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagina-solicitudes #btnGuardarSolicitud {
+    background: #0d6efd;
+}
+
+.pagina-solicitudes #btnNuevaSolicitud {
+    background: #6c757d;
+}
+
+.pagina-solicitudes .titulo-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.pagina-solicitudes .titulo-tabla h2,
+.pagina-solicitudes .titulo-tabla .busqueda {
+    margin-bottom: 0;
+}
+
+.pagina-solicitudes table {
+    min-width: 1100px;
+}
+
+.pagina-solicitudes .estado-solicitud {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.pagina-solicitudes .estado-pendiente {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.pagina-solicitudes .estado-aprobada {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.pagina-solicitudes .estado-rechazada {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.pagina-solicitudes .btn-eliminar-solicitud {
+    background: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pagina-solicitudes .btn-eliminar-solicitud:disabled {
+    background: #adb5bd;
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+
+    .pagina-solicitudes .formulario-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .pagina-solicitudes .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-solicitudes .campo-ancho {
+        grid-column: span 1;
+    }
+
+    .pagina-solicitudes .acciones {
+        flex-direction: column;
+    }
+
+    .pagina-solicitudes .acciones button {
+        width: 100%;
+    }
+
+    .pagina-solicitudes .busqueda {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pagina-solicitudes .busqueda input,
+    .pagina-solicitudes .busqueda button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   PÁGINA DE APROBACIONES
+   ========================================================= */
+
+.pagina-aprobaciones .encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe3e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pagina-aprobaciones .encabezado h1 {
+    margin-bottom: 18px;
+}
+
+.pagina-aprobaciones .menu {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-aprobaciones .menu a {
+    padding: 10px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.pagina-aprobaciones .menu a:hover {
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.pagina-aprobaciones .menu a.activo {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.pagina-aprobaciones .contenedor {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.pagina-aprobaciones .tarjeta {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagina-aprobaciones .tarjeta h2 {
+    margin-top: 0;
+}
+
+.pagina-aprobaciones .titulo-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.pagina-aprobaciones .titulo-tabla h2 {
+    margin: 0;
+}
+
+.pagina-aprobaciones .btn-actualizar {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #0d6efd;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagina-aprobaciones table {
+    min-width: 1050px;
+}
+
+.pagina-aprobaciones .btn-seleccionar-solicitud {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #0d6efd;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagina-aprobaciones .formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.pagina-aprobaciones .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-aprobaciones .campo-ancho {
+    grid-column: span 2;
+}
+
+.pagina-aprobaciones .campo label {
+    margin-bottom: 7px;
+    color: #374151;
+    font-weight: bold;
+}
+
+.pagina-aprobaciones .campo input,
+.pagina-aprobaciones .campo textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.pagina-aprobaciones .campo textarea {
+    resize: vertical;
+}
+
+.pagina-aprobaciones .campo input:focus,
+.pagina-aprobaciones .campo textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.pagina-aprobaciones .acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.pagina-aprobaciones .acciones button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagina-aprobaciones #btnAprobar {
+    background: #198754;
+}
+
+.pagina-aprobaciones #btnRechazar {
+    background: #dc3545;
+}
+
+.pagina-aprobaciones #btnCancelarResolucion {
+    background: #6c757d;
+}
+
+.pagina-aprobaciones button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+
+    .pagina-aprobaciones .formulario-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .pagina-aprobaciones .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-aprobaciones .campo-ancho {
+        grid-column: span 1;
+    }
+
+    .pagina-aprobaciones .acciones {
+        flex-direction: column;
+    }
+
+    .pagina-aprobaciones .acciones button,
+    .pagina-aprobaciones .btn-actualizar {
+        width: 100%;
+    }
+}
+/* =========================================================
+   PÁGINA DE PLAN DE PAGOS
+   ========================================================= */
+
+.pagina-plan-pagos .encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe3e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pagina-plan-pagos .encabezado h1 {
+    margin: 0 0 18px 0;
+}
+
+.pagina-plan-pagos .menu {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-plan-pagos .menu a {
+    padding: 10px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.pagina-plan-pagos .menu a:hover {
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.pagina-plan-pagos .menu a.activo {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.pagina-plan-pagos .contenedor {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.pagina-plan-pagos .tarjeta {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.pagina-plan-pagos .tarjeta h2 {
+    margin-top: 0;
+}
+
+.pagina-plan-pagos .descripcion {
+    margin-bottom: 22px;
+    color: #64748b;
+}
+
+.pagina-plan-pagos .busqueda {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pagina-plan-pagos .campo-busqueda {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 250px;
+}
+
+.pagina-plan-pagos .campo-busqueda label {
+    margin-bottom: 7px;
+    color: #374151;
+    font-weight: bold;
+}
+
+.pagina-plan-pagos .campo-busqueda input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.pagina-plan-pagos .campo-busqueda input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.pagina-plan-pagos #btnConsultar {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 6px;
+    background: #0d6efd;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagina-plan-pagos #btnConsultar:hover {
+    background: #0b5ed7;
+}
+
+.pagina-plan-pagos .datos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.pagina-plan-pagos .datos-grid > div {
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.pagina-plan-pagos .datos-grid .etiqueta {
+    display: block;
+    margin-bottom: 6px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pagina-plan-pagos .datos-grid span:not(.etiqueta) {
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagina-plan-pagos .titulo-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.pagina-plan-pagos .titulo-tabla h2 {
+    margin: 0;
+}
+
+.pagina-plan-pagos table {
+    min-width: 900px;
+}
+
+@media (max-width: 900px) {
+
+    .pagina-plan-pagos .datos-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .pagina-plan-pagos .datos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-plan-pagos .busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pagina-plan-pagos .campo-busqueda {
+        min-width: 100%;
+    }
+
+    .pagina-plan-pagos #btnConsultar {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   PÁGINA DE INICIO
+   ========================================================= */
+
+.pagina-inicio {
+    margin: 0;
+    min-height: 100vh;
+    background: #f1f5f9;
+}
+
+.pagina-inicio .encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe3e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pagina-inicio .encabezado h1 {
+    margin: 0 0 18px 0;
+}
+
+.pagina-inicio .menu {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-inicio .menu a {
+    padding: 10px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.pagina-inicio .menu a:hover {
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.pagina-inicio .menu a.activo {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+
+    .pagina-inicio .encabezado {
+        padding: 18px;
+    }
+
+    .pagina-inicio .menu {
+        flex-direction: column;
+    }
+
+    .pagina-inicio .menu a {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* =========================================================
+   PÁGINA DE PAGOS
+   ========================================================= */
+
+.pagina-pagos {
+    margin: 0;
+    min-height: 100vh;
+    background: #f1f5f9;
+}
+
+.pagina-pagos .encabezado {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dfe3e8;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.pagina-pagos .encabezado h1 {
+    margin: 0 0 18px 0;
+}
+
+.pagina-pagos .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pagina-pagos .menu a {
+    padding: 10px 16px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+.pagina-pagos .menu a:hover {
+    background: #e7f1ff;
+    color: #0d6efd;
+}
+
+.pagina-pagos .menu a.activo {
+    background: #0d6efd;
+    color: #ffffff;
+}
+
+.pagina-pagos .contenedor-pagos {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+@media (max-width:600px){
+
+    .pagina-pagos .encabezado{
+        padding:18px;
+    }
+
+    .pagina-pagos .menu{
+        flex-direction:column;
+    }
+
+    .pagina-pagos .menu a{
+        width:100%;
+        text-align:center;
+        box-sizing:border-box;
+    }
+
+}
+
+/* =========================================================
+   ESTILOS COMPLETOS DEL MÓDULO DE PAGOS
+   ========================================================= */
+
+.pagina-pagos .tarjeta {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.pagina-pagos .titulo-seccion {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.pagina-pagos .fila-consulta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.pagina-pagos .grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.pagina-pagos .grupo-formulario label {
+    font-weight: 600;
+    color: #333333;
+}
+
+.pagina-pagos .grupo-formulario input,
+.pagina-pagos .grupo-formulario textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.pagina-pagos .grupo-formulario input:focus,
+.pagina-pagos .grupo-formulario textarea:focus {
+    border-color: #1769ff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(23, 105, 255, 0.15);
+}
+
+.pagina-pagos .boton {
+    border: none;
+    border-radius: 6px;
+    padding: 11px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pagina-pagos .boton-primario {
+    background: #1769ff;
+    color: #ffffff;
+}
+
+.pagina-pagos .boton-primario:hover {
+    background: #0f54d6;
+}
+
+.pagina-pagos .boton-exito {
+    background: #198754;
+    color: #ffffff;
+}
+
+.pagina-pagos .boton-exito:hover {
+    background: #146c43;
+}
+
+.pagina-pagos .boton:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.pagina-pagos .datos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.pagina-pagos .dato {
+    background: #f8fafc;
+    border: 1px solid #dbe4ef;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.pagina-pagos .dato-etiqueta {
+    color: #56709a;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.pagina-pagos .dato-valor {
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.pagina-pagos .formulario-pago {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.pagina-pagos .campo-completo {
+    grid-column: 1 / -1;
+}
+
+.pagina-pagos .acciones-formulario {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagina-pagos .tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.pagina-pagos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pagina-pagos th {
+    background: #1769ff;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+}
+
+.pagina-pagos td {
+    padding: 11px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pagina-pagos tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.pagina-pagos .estado {
+    display: inline-block;
+    min-width: 85px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pagina-pagos .estado-pagada {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.pagina-pagos .estado-parcial {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.pagina-pagos .estado-pendiente {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.pagina-pagos .estado-aplicado {
+    background: #cff4fc;
+    color: #055160;
+}
+
+.pagina-pagos .mensaje {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.pagina-pagos .mensaje-exito {
+    display: block;
+    background: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+.pagina-pagos .mensaje-error {
+    display: block;
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+.pagina-pagos .mensaje-informacion {
+    display: block;
+    background: #cff4fc;
+    color: #055160;
+    border: 1px solid #b6effb;
+}
+
+.pagina-pagos .oculto {
+    display: none;
+}
+
+.pagina-pagos .sin-registros {
+    padding: 25px;
+    color: #64748b;
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .pagina-pagos .datos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pagina-pagos .formulario-pago {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-pagos .campo-completo,
+    .pagina-pagos .acciones-formulario {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina-pagos .fila-consulta,
+    .pagina-pagos .datos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-pagos .boton {
+        width: 100%;
+    }
+}

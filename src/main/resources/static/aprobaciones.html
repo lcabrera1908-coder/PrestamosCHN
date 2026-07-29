@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aprobación de solicitudes</title>
+
+    <link rel="stylesheet" href="css/estilos.css?v=5">
+</head>
+
+<body class="pagina-aprobaciones">
+
+<header class="encabezado">
+
+    <h1>Sistema de Préstamos CHN</h1>
+
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="solicitudes.html">Solicitudes</a>
+        <a href="aprobaciones.html" class="activo">Aprobaciones</a>
+        <a href="plan-pagos.html">Plan de pagos</a>
+        <a href="pagos.html">Pagos</a>
+    </nav>
+
+</header>
+
+<main class="contenedor">
+
+    <section class="tarjeta">
+
+        <div class="titulo-tabla">
+
+            <h2>Solicitudes pendientes</h2>
+
+            <button
+                    type="button"
+                    id="btnActualizarPendientes"
+                    class="btn-actualizar"
+            >
+                Actualizar lista
+            </button>
+
+        </div>
+
+        <div id="mensajeAprobacion" class="mensaje"></div>
+
+        <div class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Monto solicitado</th>
+                    <th>Plazo</th>
+                    <th>Tasa</th>
+                    <th>Fecha</th>
+                    <th>Observaciones</th>
+                    <th>Acción</th>
+                </tr>
+                </thead>
+
+                <tbody id="tablaPendientes">
+
+                <tr>
+                    <td colspan="8">
+                        No hay solicitudes pendientes
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <section
+            id="seccionResolucion"
+            class="tarjeta oculto"
+    >
+
+        <h2>Resolución de solicitud</h2>
+
+        <div class="datos-grid">
+
+            <div>
+                <span class="etiqueta">ID solicitud</span>
+                <span id="datoIdSolicitud"></span>
+            </div>
+
+            <div>
+                <span class="etiqueta">ID cliente</span>
+                <span id="datoIdCliente"></span>
+            </div>
+
+            <div>
+                <span class="etiqueta">Monto solicitado</span>
+                <span id="datoMontoSolicitado"></span>
+            </div>
+
+            <div>
+                <span class="etiqueta">Fecha de solicitud</span>
+                <span id="datoFechaSolicitud"></span>
+            </div>
+
+        </div>
+
+        <form id="formResolucion">
+
+            <input type="hidden" id="idSolicitudSeleccionada">
+
+            <div class="formulario-grid">
+
+                <div class="campo">
+                    <label for="montoAprobado">
+                        Monto aprobado *
+                    </label>
+
+                    <input
+                            type="number"
+                            id="montoAprobado"
+                            min="1"
+                            step="0.01"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="plazoMesesAprobado">
+                        Plazo en meses *
+                    </label>
+
+                    <input
+                            type="number"
+                            id="plazoMesesAprobado"
+                            min="1"
+                            max="360"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="tasaInteresAprobada">
+                        Tasa de interés anual (%) *
+                    </label>
+
+                    <input
+                            type="number"
+                            id="tasaInteresAprobada"
+                            min="0"
+                            step="0.01"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="fechaDesembolso">
+                        Fecha de desembolso *
+                    </label>
+
+                    <input
+                            type="date"
+                            id="fechaDesembolso"
+                            required
+                    >
+                </div>
+
+                <div class="campo campo-ancho">
+                    <label for="observacionesResolucion">
+                        Observaciones
+                    </label>
+
+                    <textarea
+                            id="observacionesResolucion"
+                            maxlength="500"
+                            rows="4"
+                            placeholder="Ingrese las observaciones de la resolución"
+                    ></textarea>
+                </div>
+
+            </div>
+
+            <div class="acciones">
+
+                <button
+                        type="submit"
+                        id="btnAprobar"
+                >
+                    Aprobar solicitud
+                </button>
+
+                <button
+                        type="button"
+                        id="btnRechazar"
+                >
+                    Rechazar solicitud
+                </button>
+
+                <button
+                        type="button"
+                        id="btnCancelarResolucion"
+                >
+                    Cancelar
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<script src="js/aprobaciones.js"></script>
+
+</body>
+</html>

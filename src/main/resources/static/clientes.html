@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Clientes</title>
+
+    <link rel="stylesheet" href="css/estilos.css?v=3">
+</head>
+
+<body class="pagina-clientes">
+
+<header class="encabezado">
+    <h1>Sistema de Préstamos CHN</h1>
+
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="clientes.html" class="activo">Clientes</a>
+        <a href="solicitudes.html">Solicitudes</a>
+        <a href="aprobaciones.html">Aprobaciones</a>
+        <a href="plan-pagos.html">Plan de pagos</a>
+        <a href="pagos.html">Pagos</a>
+
+    </nav>
+</header>
+
+<main class="contenedor">
+
+    <section class="tarjeta">
+
+        <h2>Gestión de clientes</h2>
+
+        <div id="mensajeCliente" class="mensaje"></div>
+
+        <form id="formCliente">
+
+            <input type="hidden" id="idCliente">
+
+            <div class="formulario-grid">
+
+                <div class="campo">
+                    <label for="primerNombre">Primer nombre *</label>
+                    <input
+                            type="text"
+                            id="primerNombre"
+                            maxlength="50"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="segundoNombre">Segundo nombre</label>
+                    <input
+                            type="text"
+                            id="segundoNombre"
+                            maxlength="50"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="tercerNombre">Tercer nombre</label>
+                    <input
+                            type="text"
+                            id="tercerNombre"
+                            maxlength="50"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="primerApellido">Primer apellido *</label>
+                    <input
+                            type="text"
+                            id="primerApellido"
+                            maxlength="50"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="segundoApellido">Segundo apellido</label>
+                    <input
+                            type="text"
+                            id="segundoApellido"
+                            maxlength="50"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="apellidoCasada">Apellido de casada</label>
+                    <input
+                            type="text"
+                            id="apellidoCasada"
+                            maxlength="50"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="numeroIdentificacion">
+                        Número de identificación *
+                    </label>
+
+                    <input
+                            type="text"
+                            id="numeroIdentificacion"
+                            maxlength="30"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="fechaNacimiento">
+                        Fecha de nacimiento *
+                    </label>
+
+                    <input
+                            type="date"
+                            id="fechaNacimiento"
+                            required
+                    >
+                </div>
+
+                <div class="campo campo-ancho">
+                    <label for="direccion">Dirección *</label>
+
+                    <input
+                            type="text"
+                            id="direccion"
+                            maxlength="250"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+
+                    <input
+                            type="email"
+                            id="correo"
+                            maxlength="100"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono *</label>
+
+                    <input
+                            type="tel"
+                            id="telefono"
+                            maxlength="20"
+                            required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="idEstado">Estado *</label>
+
+                    <select id="idEstado" required>
+                        <option value="1">Activo</option>
+                        <option value="2">Inactivo</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="acciones">
+
+                <button type="submit" id="btnGuardar">
+                    Guardar cliente
+                </button>
+
+                <button type="button" id="btnNuevo">
+                    Nuevo
+                </button>
+
+                <button
+                        type="button"
+                        id="btnCancelar"
+                        class="oculto"
+                >
+                    Cancelar modificación
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <section class="tarjeta">
+
+        <div class="titulo-tabla">
+
+            <h2>Clientes registrados</h2>
+
+            <div class="busqueda">
+
+                <input
+                        type="number"
+                        id="buscarIdCliente"
+                        min="1"
+                        placeholder="Id del cliente"
+                >
+
+                <button type="button" id="btnBuscarCliente">
+                    Buscar
+                </button>
+
+                <button type="button" id="btnMostrarTodos">
+                    Mostrar todos
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre completo</th>
+                    <th>Identificación</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+
+                <tbody id="tablaClientes">
+
+                <tr>
+                    <td colspan="8">
+                        No hay clientes para mostrar
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/clientes.js"></script>
+
+</body>
+</html>
