@@ -2,7 +2,8 @@
 
 ### Crédito Hipotecario Nacional de Guatemala (CHN)
 
-**Examen Práctico -- Analista Programador** -- **Luis Fernando Cabrera López**
+**Examen Práctico -- Analista Programador** -- **Luis Fernando Cabrera
+López**
 
 ------------------------------------------------------------------------
 
@@ -147,6 +148,29 @@ mvn clean install
 mvn spring-boot:run
 ```
 
+## 🐳 Ejecución con Docker
+
+### Requisitos
+
+-   Docker Desktop
+-   Docker Compose
+
+### Pasos
+
+``` bash
+git clone https://github.com/lcabrera1908-coder/PrestamosCHN.git
+cd PrestamosCHN
+docker compose up --build
+```
+
+Una vez finalizado el despliegue, abrir:
+
+-   Aplicación: http://localhost:8080
+
+> El archivo `docker-compose.yml` levanta automáticamente SQL Server,
+> crea la base de datos utilizando el script ubicado en la carpeta
+> `database` e inicia la aplicación Spring Boot.
+
 ## 🌐 Acceso
 
 -   Backend: http://localhost:8080
@@ -156,4 +180,4 @@ mvn spring-boot:run
 
 **Luis Fernando Cabrera López**
 
-Examen Práctico -- CHN
+Examen Práctico -- CHN 
