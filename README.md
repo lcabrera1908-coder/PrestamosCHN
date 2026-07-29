@@ -2,7 +2,7 @@
 
 ### Crédito Hipotecario Nacional de Guatemala (CHN)
 
-**Examen Práctico -- Analista Programador** -- Luis Cabrera**
+**Examen Práctico -- Analista Programador** -- **Luis Fernando Cabrera López**
 
 ------------------------------------------------------------------------
 
