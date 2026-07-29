@@ -1,17 +1,10 @@
 # 🏦 Sistema de Gestión de Préstamos CHN
 
-```{=html}
-<p align="center">
-```
 # Sistema de Gestión de Préstamos
 
 ### Crédito Hipotecario Nacional de Guatemala (CHN)
 
 **Examen Práctico -- Analista Programador**
-
-```{=html}
-</p>
-```
 
 ------------------------------------------------------------------------
 
